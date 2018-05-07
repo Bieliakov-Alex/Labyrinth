@@ -5,7 +5,11 @@ class Node
 {
 private:
 	Coords nodeCoord;
+	Node() = delete;
 public:
+	///<summary>Конструктор принимает константную ссылку на объект Coords, затем копирует его в переменную nodeCoord.</summary>
+	Node(const Coords&);
+
 	///<summary><c>getCoords</c> - метод, который возвращает координаты текущего узла</summary>
 	///<returns>Координаты текущего узла</returns>
 	Coords getCoords() const;
@@ -15,7 +19,7 @@ public:
 	virtual int getPathToStart() const = 0;
 
 	///<summary><c>getPathToGoal</c> - метод, который возвращает минимальное количество узлов, которые лежат между ним и целью</summary>
-	///<returns>Минимальное количество узлов между этим узлом и целью</returns>
+	///<returns>Минимальное количество узлов между этим узлом и целью.</returns>
 	virtual int getPathToGoal() const = 0;
 
 	///<summary><c>hasChild</c> - метод, который возвращает <c>true</c>, если у него есть потомок с такими координатами, иначе возвращает <c>false</c></summary>
@@ -23,18 +27,11 @@ public:
 	///<returns><c>true</c>, если у него есть потомок с такими координатами, иначе возвращает <c>false</c></returns>
 	virtual bool hasChild(const Coords& child) const = 0;
 
-	///<summary><c>hasParent</c> - метод, который возвращает <c>true</c>, если у него есть потомок с такими координатами, иначе возвращает <c>false</c></summary>
-	///<param name='parent'>Координаты искомого предка</param>
-	///<returns><c>true</c>, если у него есть потомок с такими координатами, иначе возвращает <c>false</c></returns>
-	virtual bool hasParent(const Coords& parent) const = 0;
 
 	///<summary><c>addChild</c> - метод, который добавляет координаты потомка текущего узла</summary>
 	///<param name='child'>Координаты добавляемого потомка</param>
 	virtual void addChild(const Coords& child) = 0;
 
-	///<summary><c>addParent</c> - метод, который добавляет координаты предка текущего узла</summary>
-	///<param name='parent'>Координаты добавляемого предка</param>
-	virtual void addParent(const Coords& parent) = 0;
 
 	///<summary><c>findBestWayToGoal</c> - метод, который возвращает координаты потомка, который ближе всего к цели. Если сам является целью, возвращает свои коориданты</summary>
 	///<returns>Возвращает координаты узла потомка, который ближе всего к цели. Если узел является целью, он возвращает свои координаты.</returns>
@@ -52,7 +49,6 @@ public:
 	///<returns>Возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</returns>
 	virtual bool isStart() const = 0;
 
-	Node();
 	~Node();
 };
 
