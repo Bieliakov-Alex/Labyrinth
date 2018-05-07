@@ -38,19 +38,19 @@ public:
 
 	///<summary><c>findBestWayToGoal</c> - метод, который возвращает координаты потомка, который ближе всего к цели. Если сам является целью, возвращает свои коориданты</summary>
 	///<returns>Возвращает координаты узла потомка, который ближе всего к цели. Если узел является целью, он возвращает свои координаты.</returns>
-	virtual Coords findBestWayToGoal() = 0;
+	virtual Coords findBestWayToGoal() const = 0;
 
 	///<summary><c>findBestWayToStart</c> - метод, который возвращает координаты потомка, который ближе всего к старту. Если сам является стартом, возвращает свои коориданты</summary>
 	///<returns>Возвращает координаты узла потомка, который ближе всего к старту. Если узел является стартом, он возвращает свои координаты.</returns>
-	virtual Coords findBestWayToStart() = 0;
+	virtual Coords findBestWayToStart() const = 0;
 
 	///<summary><c>isGoal</c> - метод, который возвращает <c>true</c>, если узел является целью. Иначе возвращает <c>false</c>.</summary>
 	///<returns>Возвращает <c>true</c>, если узел является целью. Иначе возвращает <c>false</c>.</returns>
-	virtual bool isGoal() = 0;
+	virtual bool isGoal() const = 0;
 
 	///<summary><c>isGoal</c> - метод, который возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</summary>
 	///<returns>Возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</returns>
-	virtual bool isStart() = 0;
+	virtual bool isStart() const = 0;
 
 	Node();
 	~Node();
