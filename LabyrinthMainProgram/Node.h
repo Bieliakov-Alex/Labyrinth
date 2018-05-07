@@ -15,11 +15,11 @@ public:
 	Coords getCoords() const;
 
 	///<summary><c>getPathToStart</c> - метод, который возвращает минимальное количество узлов, которые лежат между ним и стартом</summary>
-	///<returns>Минимальное количество узлов между этим узлом и стартом</returns>
+	///<returns>Минимальное количество узлов между этим узлом и стартом. -1, если путь еще не определен.</returns>
 	virtual int getPathToStart() const = 0;
 
 	///<summary><c>getPathToGoal</c> - метод, который возвращает минимальное количество узлов, которые лежат между ним и целью</summary>
-	///<returns>Минимальное количество узлов между этим узлом и целью.</returns>
+	///<returns>Минимальное количество узлов между этим узлом и целью. -1, если путь еще не определен.</returns>
 	virtual int getPathToGoal() const = 0;
 
 	///<summary><c>hasChild</c> - метод, который возвращает <c>true</c>, если у него есть потомок с такими координатами, иначе возвращает <c>false</c></summary>
@@ -48,6 +48,10 @@ public:
 	///<summary><c>isGoal</c> - метод, который возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</summary>
 	///<returns>Возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</returns>
 	virtual bool isStart() const = 0;
+
+	bool operator==(const Node& n);
+
+	bool operator!=(const Node& n);
 
 	~Node();
 };

@@ -13,6 +13,16 @@ Coords Node::getCoords() const
 }
 
 
+bool Node::operator==(const Node & n)
+{
+	return this->getCoords()==n.getCoords();
+}
+
+bool Node::operator!=(const Node & n)
+{
+	return !(*this==n);
+}
+
 Node::~Node()
 {
 }
