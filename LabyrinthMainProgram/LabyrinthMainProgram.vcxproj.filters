@@ -24,12 +24,18 @@
     <ClCompile Include="Coords.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="LabNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Coords.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="LabNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
