@@ -44,6 +44,14 @@ public:
 	///<returns>Возвращает координаты узла потомка, который ближе всего к старту. Если узел является стартом, он возвращает свои координаты.</returns>
 	virtual Coords findBestWayToStart() = 0;
 
+	///<summary><c>isGoal</c> - метод, который возвращает <c>true</c>, если узел является целью. Иначе возвращает <c>false</c>.</summary>
+	///<returns>Возвращает <c>true</c>, если узел является целью. Иначе возвращает <c>false</c>.</returns>
+	virtual bool isGoal() = 0;
+
+	///<summary><c>isGoal</c> - метод, который возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</summary>
+	///<returns>Возвращает <c>true</c>, если узел является началом. Иначе возвращает <c>false</c>.</returns>
+	virtual bool isStart() = 0;
+
 	Node();
 	~Node();
 };
