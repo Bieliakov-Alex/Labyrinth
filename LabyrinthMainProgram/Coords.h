@@ -11,8 +11,8 @@ public:
 	Coords(const Coords&);
 	unsigned int getX() const;
 	unsigned int getY() const;
-	bool operator==(const Coords& n);
-	bool operator!=(const Coords& n);
+	bool operator==(const Coords& n)const;
+	bool operator!=(const Coords& n)const;
 	~Coords();
 };
 

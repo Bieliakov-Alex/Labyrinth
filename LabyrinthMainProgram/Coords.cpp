@@ -27,12 +27,12 @@ unsigned int Coords::getY() const
 	return y;
 }
 
-bool Coords::operator==(const Coords & n)
+bool Coords::operator==(const Coords & n)const
 {
 	return this->getX()==n.getX()&&this->getY()==n.getY();
 }
 
-bool Coords::operator!=(const Coords & n)
+bool Coords::operator!=(const Coords & n)const
 {
 	return !(*this==n);
 }
