@@ -29,6 +29,7 @@ void Labyrinth::addNode(const Coords& coords, const list<Coords> childrens, bool
 	}
 }
 //adfasd;fkljase;dfkja;sdklfja;lskdjf
+//
 LabNode& Labyrinth::getNode(const Coords & coords)
 {
 	for (auto i = nodes.begin(); i != nodes.end(); i++)
