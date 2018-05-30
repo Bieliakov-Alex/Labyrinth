@@ -68,6 +68,15 @@ bool LabNode::isStart() const
 	return is_start;
 }
 
+std::list<Coords>::const_iterator LabNode::getChildrensBegin() const
+{
+	return childrens.begin();
+}
+
+std::list<Coords>::const_iterator LabNode::getChildrensEnd() const
+{
+	return childrens.end();
+}
 
 LabNode::~LabNode()
 {

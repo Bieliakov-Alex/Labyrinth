@@ -12,7 +12,7 @@ private:
 	int pathToGoal{ -1 };
 	LabNode() = delete;
 public:
-	LabNode(const Coords&, bool, bool);
+	LabNode(const Coords & c, bool is = false, bool ig = false);
 	void setPathToStart(int);
 	void setPathToEnd(int);
 	int getPathToStart() const override;
@@ -21,6 +21,8 @@ public:
 	void addChild(const Coords& child) override;
 	bool isGoal() const override;
 	bool isStart() const override;
+	std::list<Coords>::const_iterator getChildrensBegin() const;
+	std::list<Coords>::const_iterator getChildrensEnd() const;
 	~LabNode();
 };
 
